@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎹 The Piano Specialists Nairobi — Master Planning README
 
-## Getting Started
+## Planning Documents Index
 
-First, run the development server:
+| File                  | Description                                    | Status     |
+|-----------------------|------------------------------------------------|------------|
+| `PROJECT_OVERVIEW.md` | Brand identity, services, features summary     | ✅ Locked   |
+| `DESIGN_SYSTEM.md`    | Colors, typography, spacing, dark/light mode   | ✅ Locked   |
+| `PAGES_AND_ROUTES.md` | All pages, routes, sections per page           | ✅ Locked   |
+| `TECH_STACK.md`       | Full stack, setup commands, folder structure   | ✅ Locked   |
+| `COMPONENTS.md`       | All components, props, build order             | ✅ Locked   |
+| `IMAGES_AND_ASSETS.md`| Image plan per section, icons, logo spec       | ✅ Locked   |
 
+---
+
+## Quick Summary
+
+> **The Piano Specialists Nairobi** is a premium multi-page website for a Nairobi-based piano services business. The site showcases tuning, servicing, regulation, and expert buying guidance. Built with Next.js 14 + TypeScript + ShadCN UI + Tailwind CSS. Supports dark/light theming, is fully responsive, and integrates WhatsApp, EmailJS, and Google Maps.
+
+---
+
+## Environment Setup Checklist
+
+### Step 1 — Create Project
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest piano-specialists-nairobi \
+  --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Step 2 — Install Dependencies
+```bash
+cd piano-specialists-nairobi
+npx shadcn@latest init
+npm install framer-motion react-hook-form @hookform/resolvers zod @emailjs/browser next-themes lucide-react
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Step 3 — Install ShadCN Components
+```bash
+npx shadcn@latest add button card input textarea label badge separator toast sheet navigation-menu dropdown-menu
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Step 4 — Setup Fonts in `layout.tsx`
+```tsx
+import { Inter, Playfair_Display } from 'next/font/google'
 
-## Learn More
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Step 5 — Create Folder Structure
+Follow the structure defined in `TECH_STACK.md`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Step 6 — Set CSS Variables
+Follow color tokens in `DESIGN_SYSTEM.md` → `globals.css`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Step 7 — Create `.env.local`
+```env
+NEXT_PUBLIC_EMAILJS_SERVICE_ID=
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=
+NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=
+NEXT_PUBLIC_WHATSAPP_NUMBER=
+NEXT_PUBLIC_BUSINESS_EMAIL=
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Pending Information From Client
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Item                    | Status    | Notes                            |
+|-------------------------|-----------|----------------------------------|
+| WhatsApp number         | ⏳ Pending | Format: +254XXXXXXXXX            |
+| Business email          | ⏳ Pending | For EmailJS + footer display     |
+| Physical address        | ⏳ Pending | For Google Maps embed            |
+| Instagram handle        | ⏳ Pending |                                  |
+| LinkedIn handle         | ⏳ Pending |                                  |
+| TikTok handle           | ⏳ Pending |                                  |
+| Facebook handle         | ⏳ Pending |                                  |
+| YouTube channel         | ⏳ Pending |                                  |
+| Real testimonials       | ⏳ Pending | Placeholder used meanwhile       |
+| Logo preference/example | ⏳ Pending | Will design in-house             |
+
+---
+
+## Build Order (Recommended)
+
+```
+Phase 1 — Foundation
+  ✅ Plan all .md docs
+  [ ] Set up Next.js project
+  [ ] Configure Tailwind + ShadCN
+  [ ] Set up ThemeProvider (dark/light)
+  [ ] Configure fonts (Inter + Playfair Display)
+  [ ] Build Navbar + Footer + Logo
+
+Phase 2 — Home Page
+  [ ] HeroSection
+  [ ] ServicesOverview
+  [ ] AboutSnippet
+  [ ] WhyChooseUs
+  [ ] BuyingGuidanceHighlight
+  [ ] TestimonialsSnippet
+  [ ] ContactCTABanner
+
+Phase 3 — Services Page
+Phase 4 — Buying Guide Page
+Phase 5 — Contact Page (EmailJS + Maps + WhatsApp)
+Phase 6 — About Page
+Phase 7 — Testimonials Page
+
+Phase 8 — Polish
+  [ ] Framer Motion animations
+  [ ] WhatsAppFAB button
+  [ ] Mobile responsiveness audit
+  [ ] Dark/light mode final review
+  [ ] SEO meta tags
+  [ ] Performance optimization
+  [ ] Deploy to Vercel
+```
+
+---
+
+## Design Decisions Locked
+
+| Decision                    | Choice                                  |
+|-----------------------------|-----------------------------------------|
+| Color palette               | Black + Ivory + Gold accent             |
+| Primary font                | Inter                                   |
+| Display font (headings)     | Playfair Display                        |
+| Dark/light mode             | Yes — next-themes with class strategy   |
+| Responsive                  | Yes — mobile-first Tailwind             |
+| Logo                        | Creative in-house SVG (piano keys)      |
+| Pages                       | Multi-page (not single scroll)          |
+| Piano sales                 | ❌ Not included                          |
+| Buying guidance             | ✅ Dedicated page `/buying-guide`        |
+| WhatsApp integration        | ✅ Floating button on all pages          |
+| EmailJS                     | ✅ Contact form                          |
+| Google Maps                 | ✅ Contact page                          |
+| Social media links          | ✅ Footer + Contact page                 |
+| Stock images                | Unsplash / Pexels (WebP format)         |
+| Animations                  | Framer Motion                           |
+| Form validation             | React Hook Form + Zod                   |
+| Deployment                  | Vercel                                  |
+
+---
+
+_Planning Phase Complete. Ready to build. 🚀_
+_Last updated: Planning Phase_
