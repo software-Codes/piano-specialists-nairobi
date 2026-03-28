@@ -1,10 +1,10 @@
 import type { NavItem } from "@/types";
 
+// Home excluded — Logo links back to /
+// Testimonials excluded — surfaced via home snippet and About page
 export const navigationItems: NavItem[] = [
-  { title: "Home", href: "/" },
   { title: "Services", href: "/services" },
   { title: "Buying Guide", href: "/buying-guide" },
   { title: "About", href: "/about" },
-  { title: "Testimonials", href: "/testimonials" },
   { title: "Contact", href: "/contact" },
 ];

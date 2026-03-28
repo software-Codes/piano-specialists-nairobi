@@ -2,120 +2,126 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* ── Dark mode variant — targets .dark on <html> and all its children ── */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* ── Map CSS variables to Tailwind color/font tokens ── */
 @theme inline {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-inter);
-  --font-heading: var(--font-playfair);
-  --color-accent-light: hsl(var(--accent-light));
-  --color-ring: hsl(var(--ring));
-  --color-input: hsl(var(--input));
-  --color-border: hsl(var(--border));
-  --color-destructive: hsl(var(--destructive));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary: hsl(var(--primary));
+  --color-background:         hsl(var(--background));
+  --color-foreground:         hsl(var(--foreground));
+  --color-card:               hsl(var(--card));
+  --color-card-foreground:    hsl(var(--card-foreground));
+  --color-popover:            hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-card: hsl(var(--card));
+  --color-primary:            hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary:          hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted:              hsl(var(--muted));
+  --color-muted-foreground:   hsl(var(--muted-foreground));
+  --color-accent:             hsl(var(--accent));
+  --color-accent-light:       hsl(var(--accent-light));
+  --color-accent-foreground:  hsl(var(--accent-foreground));
+  --color-destructive:        hsl(var(--destructive));
+  --color-border:             hsl(var(--border));
+  --color-input:              hsl(var(--input));
+  --color-ring:               hsl(var(--ring));
+
+  --font-sans:    var(--font-inter);
+  --font-mono:    var(--font-inter);
+  --font-heading: var(--font-playfair);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
 }
 
+/* ── Light mode tokens ── */
 :root {
-  --background: 45 29% 97%;
-  --foreground: 0 0% 4%;
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 4%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 4%;
-  --primary: 0 0% 4%;
-  --primary-foreground: 45 29% 97%;
-  --secondary: 38 21% 93%;
+  --background:          45 29% 97%;
+  --foreground:          0 0% 4%;
+  --card:                0 0% 100%;
+  --card-foreground:     0 0% 4%;
+  --popover:             0 0% 100%;
+  --popover-foreground:  0 0% 4%;
+  --primary:             0 0% 4%;
+  --primary-foreground:  45 29% 97%;
+  --secondary:           38 21% 93%;
   --secondary-foreground: 0 0% 4%;
-  --muted: 38 21% 93%;
-  --muted-foreground: 0 0% 42%;
-  --accent: 43 89% 38%;
-  --accent-light: 43 80% 46%;
-  --accent-foreground: 45 29% 97%;
-  --destructive: 0 72% 52%;
-  --border: 37 20% 87%;
-  --input: 37 20% 87%;
-  --ring: 43 89% 38%;
-  --radius: 0.625rem;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --shadow-gold: 0 4px 24px rgba(184, 134, 11, 0.2);
+  --muted:               38 21% 93%;
+  --muted-foreground:    0 0% 42%;
+  --accent:              43 89% 38%;
+  --accent-light:        43 80% 46%;
+  --accent-foreground:   45 29% 97%;
+  --destructive:         0 72% 52%;
+  --border:              37 20% 87%;
+  --input:               37 20% 87%;
+  --ring:                43 89% 38%;
+  --radius:              0.625rem;
+  --shadow-sm:           0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md:           0 4px 16px rgba(0, 0, 0, 0.1);
+  --shadow-lg:           0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-gold:         0 4px 24px rgba(184, 134, 11, 0.2);
 }
 
+/* ── Dark mode tokens ── */
 .dark {
-  --background: 0 0% 4%;
-  --foreground: 45 29% 97%;
-  --card: 0 0% 8%;
-  --card-foreground: 45 29% 97%;
-  --popover: 0 0% 8%;
-  --popover-foreground: 45 29% 97%;
-  --primary: 45 29% 97%;
-  --primary-foreground: 0 0% 4%;
-  --secondary: 0 0% 10%;
+  --background:          0 0% 4%;
+  --foreground:          45 29% 97%;
+  --card:                0 0% 8%;
+  --card-foreground:     45 29% 97%;
+  --popover:             0 0% 8%;
+  --popover-foreground:  45 29% 97%;
+  --primary:             45 29% 97%;
+  --primary-foreground:  0 0% 4%;
+  --secondary:           0 0% 10%;
   --secondary-foreground: 45 29% 97%;
-  --muted: 0 0% 10%;
-  --muted-foreground: 0 0% 63%;
-  --accent: 43 80% 46%;
-  --accent-light: 45 81% 53%;
-  --accent-foreground: 0 0% 4%;
-  --destructive: 0 68% 58%;
-  --border: 0 0% 16%;
-  --input: 0 0% 16%;
-  --ring: 43 80% 46%;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-gold: 0 4px 24px rgba(212, 160, 23, 0.25);
+  --muted:               0 0% 10%;
+  --muted-foreground:    0 0% 63%;
+  --accent:              43 80% 46%;
+  --accent-light:        45 81% 53%;
+  --accent-foreground:   0 0% 4%;
+  --destructive:         0 68% 58%;
+  --border:              0 0% 16%;
+  --input:               0 0% 16%;
+  --ring:                43 80% 46%;
+  --shadow-sm:           0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md:           0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg:           0 8px 32px rgba(0, 0, 0, 0.6);
+  --shadow-gold:         0 4px 24px rgba(212, 160, 23, 0.25);
 }
 
+/* ── Base styles ── */
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   html {
-    @apply scroll-smooth font-sans;
+    @apply scroll-smooth;
+    font-family: var(--font-inter), sans-serif;
   }
   body {
-    @apply min-h-screen bg-background text-foreground;
+    @apply min-h-screen bg-background text-foreground antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-playfair);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), Georgia, serif;
   }
 }
 
+/* ── Utility classes ── */
 @layer utilities {
   .page-shell {
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
-
   .section-space {
     @apply py-16 md:py-24;
   }
-
   .shadow-gold {
     box-shadow: var(--shadow-gold);
+  }
+  .font-heading {
+    font-family: var(--font-playfair), Georgia, serif;
   }
 }

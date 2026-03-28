@@ -11,17 +11,19 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "The Piano Specialists Nairobi",
   description:
-    "Scaffolded website structure for piano tuning, servicing, and buying guidance in Nairobi.",
+    "Professional piano tuning, servicing, regulation, and expert buying guidance in Nairobi, Kenya.",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -39,17 +41,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${playfair.variable}`}
     >
       <body className="bg-background text-foreground antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">{children}</main>
