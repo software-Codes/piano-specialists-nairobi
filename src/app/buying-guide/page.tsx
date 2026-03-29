@@ -7,9 +7,28 @@ import { Button } from "@/components/ui/button";
 import { guideImages } from "@/data/images";
 
 export const metadata = {
-  title: "Piano Buying Guide | The Piano Specialists Nairobi",
+  title: "Piano Buying Guide Nairobi | Grand, Upright & Digital Pianos",
   description:
-    "Expert piano buying advice for Nairobi. Compare grand, upright, and digital pianos. Budget guidance, checklists, and personalized recommendations.",
+    "Expert piano buying advice for Nairobi. Compare 21 piano models - grand, upright, and digital pianos. Budget guidance, checklists, and personalized recommendations. Free consultation available.",
+  keywords: [
+    'buy piano Nairobi',
+    'piano buying guide Kenya',
+    'grand piano Nairobi',
+    'upright piano Kenya',
+    'digital piano Nairobi',
+    'piano prices Kenya',
+    'best piano Nairobi',
+    'piano consultation Kenya',
+  ],
+  alternates: {
+    canonical: 'https://piano-specialists-nairobi.vercel.app/buying-guide',
+  },
+  openGraph: {
+    title: 'Piano Buying Guide Nairobi | Grand, Upright & Digital Pianos',
+    description:
+      'Expert piano buying advice for Nairobi. Compare 21 piano models with budget guidance and personalized recommendations.',
+    url: 'https://piano-specialists-nairobi.vercel.app/buying-guide',
+  },
 };
 
 export default function BuyingGuidePage() {

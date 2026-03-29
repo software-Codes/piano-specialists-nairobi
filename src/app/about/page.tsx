@@ -7,9 +7,25 @@ import { Button } from "@/components/ui/button";
 import { aboutImages } from "@/data/images";
 
 export const metadata = {
-  title: "About Us | The Piano Specialists Nairobi",
+  title: "About Us | Piano Experts in Nairobi with 15+ Years Experience",
   description:
-    "Learn about Nairobi's trusted piano service experts. Over 15 years of experience in tuning, servicing, and caring for pianos across Kenya.",
+    "Learn about Nairobi's trusted piano service experts. Over 15 years of experience in tuning, servicing, and caring for pianos across Kenya. Serving schools, churches, and musicians.",
+  keywords: [
+    'piano technician Nairobi',
+    'piano expert Kenya',
+    'piano tuner Nairobi',
+    'experienced piano technician',
+    'Nairobi piano services',
+  ],
+  alternates: {
+    canonical: 'https://piano-specialists-nairobi.vercel.app/about',
+  },
+  openGraph: {
+    title: 'About Us | Piano Experts in Nairobi with 15+ Years Experience',
+    description:
+      'Over 15 years of experience in piano tuning, servicing, and care across Nairobi and Kenya.',
+    url: 'https://piano-specialists-nairobi.vercel.app/about',
+  },
 };
 
 export default function AboutPage() {

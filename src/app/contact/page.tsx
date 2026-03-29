@@ -7,9 +7,25 @@ import { Button } from "@/components/ui/button";
 import { contactImages } from "@/data/images";
 
 export const metadata = {
-  title: "Contact Us | The Piano Specialists Nairobi",
+  title: "Contact Us | Piano Services Nairobi | Call +254 115 671 073",
   description:
-    "Get in touch with Nairobi's piano experts. Book services, request consultations, or ask questions. We're here to help with all your piano needs.",
+    "Get in touch with Nairobi's piano experts. Book services, request consultations, or ask questions. Located in Lavington, Nairobi. Call +254 115 671 073 or WhatsApp us today.",
+  keywords: [
+    'contact piano tuner Nairobi',
+    'piano services Lavington',
+    'book piano tuning Nairobi',
+    'piano consultation Kenya',
+    'piano technician contact',
+  ],
+  alternates: {
+    canonical: 'https://piano-specialists-nairobi.vercel.app/contact',
+  },
+  openGraph: {
+    title: 'Contact Us | Piano Services Nairobi',
+    description:
+      'Get in touch with Nairobi\'s piano experts. Book services or request consultations. Located in Lavington.',
+    url: 'https://piano-specialists-nairobi.vercel.app/contact',
+  },
 };
 
 export default function ContactPage() {

@@ -8,9 +8,26 @@ import { services } from "@/data/services";
 import { servicesImages } from "@/data/images";
 
 export const metadata = {
-  title: "Services | The Piano Specialists Nairobi",
+  title: "Piano Services in Nairobi | Tuning, Servicing, Regulation",
   description:
-    "Professional piano tuning, servicing, regulation, and buying guidance in Nairobi. Expert care for every instrument.",
+    "Professional piano tuning, servicing, regulation, and voicing in Nairobi. Expert care for grand pianos, upright pianos, and digital pianos. Book your service today. Call +254 115 671 073.",
+  keywords: [
+    'piano tuning Nairobi',
+    'piano servicing Kenya',
+    'piano regulation Nairobi',
+    'piano voicing Kenya',
+    'piano maintenance Nairobi',
+    'piano repair Kenya',
+  ],
+  alternates: {
+    canonical: 'https://piano-specialists-nairobi.vercel.app/services',
+  },
+  openGraph: {
+    title: 'Piano Services in Nairobi | Tuning, Servicing, Regulation',
+    description:
+      'Professional piano tuning, servicing, regulation, and voicing in Nairobi. Expert care for all piano types.',
+    url: 'https://piano-specialists-nairobi.vercel.app/services',
+  },
 };
 
 export default function ServicesPage() {
