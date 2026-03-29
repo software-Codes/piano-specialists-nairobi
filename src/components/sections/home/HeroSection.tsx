@@ -35,7 +35,7 @@ export function HeroSection() {
           fill
           priority
           className="object-cover object-center"
-          sizes="100vw"
+          sizes="(max-width: 767px) 100vw, 0vw"
         />
         {/* dark mode: heavy dark overlay / light mode: warm ivory overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-black/40 dark:from-black/95 dark:via-black/65 dark:to-black/40" />
