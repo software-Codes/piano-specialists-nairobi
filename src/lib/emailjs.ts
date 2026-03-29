@@ -21,7 +21,7 @@ export function sendContactEmail(formData: ContactFormData) {
 export function sendConsultationEmail(formData: ConsultationFormData) {
   return emailjs.send(
     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
-    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+    process.env.NEXT_PUBLIC_EMAILJS_CONSULTATION_TEMPLATE_ID ?? "",
     {
       from_name: formData.name,
       from_email: formData.email,

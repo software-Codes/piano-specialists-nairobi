@@ -31,7 +31,7 @@ const cardVariants = {
 
 export function TestimonialsSnippet() {
   return (
-    <section className="section-space">
+    <section id="testimonials" className="section-space">
       <div className="page-shell space-y-12">
         <SectionHeader
           eyebrow="Testimonials"
