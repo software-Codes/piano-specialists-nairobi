@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  allowedDevOrigins: ["172.17.0.2"],
+  // Production-ready configuration
+  images: {
+    formats: ['image/webp'],
+  },
 };
 
 export default nextConfig;
