@@ -8,8 +8,12 @@ export type NavItem = {
 export type ServiceItem = {
   id: string;
   title: string;
+  tagline: string;
   description: string;
+  bullets: string[];
+  frequency?: string;
   icon: LucideIcon;
+  image: { src: string; alt: string };
 };
 
 export type TestimonialItem = {
