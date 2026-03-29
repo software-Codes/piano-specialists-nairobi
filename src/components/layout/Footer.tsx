@@ -11,12 +11,18 @@ const quickLinks = [
 
 const companyLinks = [
   { title: "About", href: "/about" },
-  { title: "Testimonials", href: "/testimonials" },
+  { title: "Testimonials", href: "/#testimonials" },
   { title: "Contact", href: "/contact" },
 ];
 
 const contactInfo = [
-  { icon: Phone, label: "+254 700 000 000", href: "tel:+254700000000" },
+  { 
+    icon: Phone, 
+    label: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER 
+      ? `+${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER.slice(0, 3)} ${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER.slice(3, 6)} ${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER.slice(6, 9)} ${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER.slice(9)}` 
+      : "+254 700 000 000",
+    href: `tel:+${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "254700000000"}` 
+  },
   { icon: Mail, label: "info@pianospecialists.co.ke", href: "mailto:info@pianospecialists.co.ke" },
   { icon: MapPin, label: "Nairobi, Kenya", href: "#" },
 ];
